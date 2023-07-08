@@ -10,8 +10,8 @@ public class SpawnablesMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpawnableBehaviour spawnableBehaviour;
 
-    [SerializeField] private float verticalSpeed = 2.0f;
-    [SerializeField] private float horizontalSpeed = 3.0f;
+    private float verticalSpeed = 2.0f;
+    private float horizontalSpeed = 3.0f;
 
     private float acceleration = 1f;
 
@@ -32,6 +32,7 @@ public class SpawnablesMovement : MonoBehaviour
         acceleration = spawnableBehaviour.GetAcceleration();
 
         if (movement.x != 0 && canMove && AmIInTheMiddle()) StartCoroutine(Move());
+
         rb.velocity = verticalSpeed * acceleration * Vector2.down;
 
         CheckPosition();
@@ -109,20 +110,20 @@ public class SpawnablesMovement : MonoBehaviour
             targetPositionIndex = 5;
         }
 
-        horizontalSpeed *= acceleration;
-
-        targetPosition = new Vector3(targetPositionIndex, transform.position.y - verticalSpeed / horizontalSpeed, transform.position.z);
+        float startpositionfloat = transform.position.y;
 
         while (elapsedTime < 1f)
         {
-            elapsedTime += Time.deltaTime * horizontalSpeed;
+            elapsedTime += Time.deltaTime * horizontalSpeed * acceleration;
+
+            targetPosition = new Vector3(targetPositionIndex, startpositionfloat - verticalSpeed * elapsedTime / horizontalSpeed, transform.position.z);
 
             transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime);
 
             yield return null;
         }
 
-        transform.position = targetPosition;
+        //transform.position = targetPosition;
 
         canMove = true;
     }
