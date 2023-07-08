@@ -158,9 +158,7 @@ MonoBehaviour:
   - {fileID: 508454973244528755, guid: 07316e247a3361b40aa01064d341db7c, type: 3}
   obstacleTiles:
   - {fileID: 508454973244528755, guid: 42fb66235bed9454ebd3724dee9716eb, type: 3}
-  spawnInterval: 1
-  moveSpeed: 2
-  despawnDelay: 3
+  isCallable: 1
 --- !u!4 &449822421
 Transform:
   m_ObjectHideFlags: 0
@@ -490,7 +488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824281475}
   - component: {fileID: 1824281474}
-  - component: {fileID: 1824281476}
+  - component: {fileID: 1824281477}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -565,7 +563,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1824281476
+--- !u!61 &1824281477
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -594,7 +592,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

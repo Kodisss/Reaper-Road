@@ -17,31 +17,28 @@ public class SpawnableBehaviour : MonoBehaviour
 
     private enum PassTilesNames {Empty, Soul, Boost};
 
-    [SerializeField] private float spawnInterval = 1f; // Time interval between each spawn
-    [SerializeField] private float moveSpeed = 5f;     // Speed at which the object moves downward
-    [SerializeField] private float despawnDelay = 3f;  // Time delay before despawning the object
-
     private int numberOfObstacles;
 
     private int numberOfRoads;
 
+    public bool isCallable = true;
 
     // Start is called before the first frame update
     void Start()
     {
         numberOfObstacles = obstacleTiles.Length;
         numberOfRoads = spawnPositions.Length;
+        isCallable = true;
         SpawnObjects();
     }
 
-    private void SpawnObjects()
+    public void SpawnObjects()
     {
+        if (!isCallable) return;
         int positionOfPass = Random.Range(0, numberOfRoads);
         PassTilesNames typeOfPassTiles = WhichPassTiles();
 
-        Debug.Log("PassTiles = " + (int)typeOfPassTiles + " position = " + positionOfPass);
-
-        Instantiate(passTiles[(int)typeOfPassTiles], spawnPositions[positionOfPass], Quaternion.identity);
+        Instantiate(passTiles[(int)typeOfPassTiles], spawnPositions[positionOfPass], Quaternion.identity, transform);
 
         for(int i = 0; i < spawnPositions.Length; ++i)
         {
@@ -69,6 +66,6 @@ public class SpawnableBehaviour : MonoBehaviour
     private void SpawnRandomTile(int position)
     {
         int typeOfObstacle = Random.Range(0, numberOfObstacles);
-        Instantiate(obstacleTiles[typeOfObstacle], spawnPositions[position], Quaternion.identity);
+        Instantiate(obstacleTiles[typeOfObstacle], spawnPositions[position], Quaternion.identity, transform);
     }
 }
