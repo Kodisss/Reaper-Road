@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5302230601497851574}
   - component: {fileID: 8976328148746652018}
   - component: {fileID: -4994544727652566693}
+  - component: {fileID: 4935411555871770562}
   m_Layer: 0
   m_Name: Soul
-  m_TagString: Untagged
+  m_TagString: Pass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688b49cb433233742a6b90e5b78562f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  verticalSpeed: 2
+  horizontalSpeed: 3
 --- !u!50 &8976328148746652018
 Rigidbody2D:
   serializedVersion: 4
@@ -172,3 +174,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4935411555871770562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508454973244528755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 00ab9bc196e733c4e8fea764afec2f3d, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

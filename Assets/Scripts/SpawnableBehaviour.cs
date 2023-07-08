@@ -14,6 +14,7 @@ public class SpawnableBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject[] passTiles;
     [SerializeField] private GameObject[] obstacleTiles;
+    [SerializeField] private float acceleration = 1f;
 
     private enum PassTilesNames {Empty, Soul, Boost};
 
@@ -21,20 +22,16 @@ public class SpawnableBehaviour : MonoBehaviour
 
     private int numberOfRoads;
 
-    public bool isCallable = true;
-
     // Start is called before the first frame update
     void Start()
     {
         numberOfObstacles = obstacleTiles.Length;
         numberOfRoads = spawnPositions.Length;
-        isCallable = true;
         SpawnObjects();
     }
 
     public void SpawnObjects()
     {
-        if (!isCallable) return;
         int positionOfPass = Random.Range(0, numberOfRoads);
         PassTilesNames typeOfPassTiles = WhichPassTiles();
 
@@ -67,5 +64,10 @@ public class SpawnableBehaviour : MonoBehaviour
     {
         int typeOfObstacle = Random.Range(0, numberOfObstacles);
         Instantiate(obstacleTiles[typeOfObstacle], spawnPositions[position], Quaternion.identity, transform);
+    }
+
+    public float GetAcceleration()
+    {
+        return acceleration;
     }
 }
