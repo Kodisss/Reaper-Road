@@ -23,6 +23,7 @@ public class SpawnablesMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spawnableBehaviour = GameObject.FindGameObjectWithTag("GameController").GetComponent<SpawnableBehaviour>();
+        GameManager.instance.endGame += EndSpawn;
     }
 
     // Update is called once per frame
@@ -52,13 +53,26 @@ public class SpawnablesMovement : MonoBehaviour
         else return false;
     }
 
+    private void EndSpawn()
+    {
+        GameManager.instance.isPlaying = false;
+        Debug.Log("Game Over");
+        GameManager.instance.endGame -= EndSpawn;
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player")) Debug.Log("I am : " + gameObject.name);
+        if (collision.CompareTag("Player")) Debug.Log("I am : " + gameObject.name);
         if (collision.CompareTag("MiddleLine") && gameObject.CompareTag("Pass"))
         {
-            if(canSpawn) spawnableBehaviour.SpawnObjects();
+            if (canSpawn) spawnableBehaviour.SpawnObjects();
             canSpawn = false;
+        }
+
+        if (gameObject.CompareTag("Obstacle") && collision.CompareTag("Player"))
+        {
+            EndSpawn();
         }
     }
 
