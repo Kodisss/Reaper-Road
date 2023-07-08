@@ -152,13 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80da8b13db963f54299c8f8a4985f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_positions:
-  - {x: -5, y: 5.5, z: -1}
-  - {x: 0, y: 5.5, z: -1}
-  - {x: 5, y: 5.5, z: -1}
-  spawnables:
-  - {fileID: 508454973244528755, guid: 42fb66235bed9454ebd3724dee9716eb, type: 3}
+  passTiles:
+  - {fileID: 508454973244528755, guid: 53b1e51022d7fac47a3b0232f7fa185c, type: 3}
+  - {fileID: 508454973244528755, guid: d2fc99ee0e805504b883592f36cb2911, type: 3}
   - {fileID: 508454973244528755, guid: 07316e247a3361b40aa01064d341db7c, type: 3}
+  obstacleTiles:
+  - {fileID: 508454973244528755, guid: 42fb66235bed9454ebd3724dee9716eb, type: 3}
   spawnInterval: 1
   moveSpeed: 2
   despawnDelay: 3
