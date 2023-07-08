@@ -27,19 +27,38 @@ public class SpawnableBehaviour : MonoBehaviour
     {
         numberOfObstacles = obstacleTiles.Length;
         numberOfRoads = spawnPositions.Length;
-        SpawnObjects();
+        GameManager.instance.startGame += SpawnObjects;
+    }
+
+    private void Update()
+    {
+        if (!GameManager.instance.isPlaying)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     public void SpawnObjects()
     {
-        int positionOfPass = Random.Range(0, numberOfRoads);
-        PassTilesNames typeOfPassTiles = WhichPassTiles();
-
-        Instantiate(passTiles[(int)typeOfPassTiles], spawnPositions[positionOfPass], Quaternion.identity, transform);
-
-        for(int i = 0; i < spawnPositions.Length; ++i)
+        if (GameManager.instance.isPlaying)
         {
-            if (i != positionOfPass) SpawnRandomTile(i);
+            int positionOfPass = Random.Range(0, numberOfRoads);
+            PassTilesNames typeOfPassTiles = WhichPassTiles();
+
+            Instantiate(passTiles[(int)typeOfPassTiles], spawnPositions[positionOfPass], Quaternion.identity, transform);
+
+            for (int i = 0; i < spawnPositions.Length; ++i)
+            {
+                if (i != positionOfPass) SpawnRandomTile(i);
+            }
         }
     }
 
