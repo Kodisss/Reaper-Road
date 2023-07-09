@@ -68,7 +68,7 @@ public class SpawnableBehaviour : MonoBehaviour
         GameManager.instance.score += 1;
     }
 
-    private PassTilesNames WhichPassTiles(int position)
+    private void WhichPassTiles(int position)
     {
         float value = Random.value;
         if (value < 0.8f)
