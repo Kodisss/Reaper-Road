@@ -62,7 +62,10 @@ public class SpawnablesMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) Debug.Log("I am : " + gameObject.name);
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("I am : " + gameObject.name);
+        }
         if (collision.CompareTag("MiddleLine") && gameObject.CompareTag("Pass"))
         {
             spawnableBehaviour.SpawnObjects();
