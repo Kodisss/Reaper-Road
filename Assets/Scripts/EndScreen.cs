@@ -6,13 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
-    [SerializeField] TMP_Text winnerName;
-
-    private void Start()
-    {
-        winnerName.text = PlayerPrefs.GetString("Winner") + " wins!";
-    }
-
     public void QuitGame()
     {
         Application.Quit();
