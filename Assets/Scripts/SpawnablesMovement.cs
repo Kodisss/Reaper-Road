@@ -50,7 +50,7 @@ public class SpawnablesMovement : MonoBehaviour
 
     private bool AmIInTheMiddle()
     {
-        if(transform.position.y < 6 && transform.position.y > -2) return true;
+        if(transform.position.y < 12f && transform.position.y > 3f) return true;
         else return false;
     }
 
