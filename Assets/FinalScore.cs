@@ -10,6 +10,11 @@ public class FinalScore : MonoBehaviour
     void Start()
     {
         int score = GameManager.instance.score;
-        scoreDisplay.text += score.ToString();
+        string stext = score.ToString();
+        while (stext.Length < 4)
+        {
+            stext = "0" + stext;
+        }
+        scoreDisplay.text = stext;
     }
 }

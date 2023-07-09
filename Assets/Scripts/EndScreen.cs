@@ -18,6 +18,7 @@ public class EndScreen : MonoBehaviour
     public void RestartGame()
     {
         GameManager.instance.score = 0;
+        GameManager.instance.isPlaying = true;
         SceneManager.LoadScene("Game");
     }
 }
