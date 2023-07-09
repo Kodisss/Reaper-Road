@@ -11,7 +11,7 @@ public class SpawnablesMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpawnableBehaviour spawnableBehaviour;
 
-    private float verticalSpeed = 3.0f;
+    private float verticalSpeed = 7.0f;
     private float horizontalSpeed = 3.0f;
 
     private float offset = 14.8f;
@@ -50,7 +50,7 @@ public class SpawnablesMovement : MonoBehaviour
 
     private bool AmIInTheMiddle()
     {
-        if(transform.position.y < 12f && transform.position.y > 3f) return true;
+        if(transform.position.y < 7f && transform.position.y > 2f) return true;
         else return false;
     }
 

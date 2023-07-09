@@ -11,7 +11,7 @@ public class Background : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = 3.0f * Vector2.down;
+        rb.velocity = 7.0f * Vector2.down;
     }
 
     private void Update()
