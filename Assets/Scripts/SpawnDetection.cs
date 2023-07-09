@@ -16,7 +16,7 @@ public class SpawnDetection : MonoBehaviour
     {
         if (collision.CompareTag("SpawnLine"))
         {
-            //Debug.Log("I triggered child");
+            Debug.Log("I triggered child");
             spawnableBehaviour.SpawnObjects();
         }
     }
