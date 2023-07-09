@@ -13,11 +13,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("ok");
         instance = this;
-    }
-
-    private void OnStart()
-    {
         if (!isPlaying)
         {
             isPlaying = true;

@@ -27,7 +27,7 @@ public class SpawnableBehaviour : MonoBehaviour
     {
         numberOfObstacles = obstacleTiles.Length;
         numberOfRoads = spawnPositions.Length;
-        GameManager.instance.startGame += SpawnObjects;
+        SpawnObjects();
     }
 
     private void Update()

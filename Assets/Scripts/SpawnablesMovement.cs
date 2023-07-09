@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.SceneManagement;
 
 public class SpawnablesMovement : MonoBehaviour
 {
@@ -56,9 +57,8 @@ public class SpawnablesMovement : MonoBehaviour
     private void EndSpawn()
     {
         GameManager.instance.isPlaying = false;
-        Debug.Log("Game Over");
-        GameManager.instance.endGame -= EndSpawn;
-        Destroy(gameObject);
+        SceneManager.LoadScene("EndScreen");
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
