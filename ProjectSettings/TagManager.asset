@@ -51,6 +51,9 @@ TagManager:
   - name: Tiles
     uniqueID: 2228557273
     locked: 0
+  - name: Empty
+    uniqueID: 3800458425
+    locked: 0
   - name: Car
     uniqueID: 1117323581
     locked: 0

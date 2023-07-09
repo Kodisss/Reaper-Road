@@ -14,11 +14,12 @@ public class SpawnablesMovement : MonoBehaviour
     private float verticalSpeed = 2.0f;
     private float horizontalSpeed = 3.0f;
 
+    private float offset = 14.8f;
+
     private float acceleration = 1f;
 
     private Vector2 movement;
     private bool canMove = true;
-    private bool canSpawn = true;
 
     private void Start()
     {
@@ -41,16 +42,15 @@ public class SpawnablesMovement : MonoBehaviour
 
     private void CheckPosition()
     {
-        if (transform.position.y < -6f)
+        if (transform.position.y < -30f)
         {
-            canSpawn = true;
             Destroy(gameObject);
-        }  
+        }
     }
 
     private bool AmIInTheMiddle()
     {
-        if(transform.position.y < 2 && transform.position.y > -2) return true;
+        if(transform.position.y < 4 && transform.position.y > -4) return true;
         else return false;
     }
 
@@ -66,8 +66,7 @@ public class SpawnablesMovement : MonoBehaviour
         if (collision.CompareTag("Player")) Debug.Log("I am : " + gameObject.name);
         if (collision.CompareTag("MiddleLine") && gameObject.CompareTag("Pass"))
         {
-            if (canSpawn) spawnableBehaviour.SpawnObjects();
-            canSpawn = false;
+            spawnableBehaviour.SpawnObjects();
         }
 
         if (gameObject.CompareTag("Obstacle") && collision.CompareTag("Player"))
@@ -94,20 +93,20 @@ public class SpawnablesMovement : MonoBehaviour
 
         if (movement.x > 0)
         {
-            targetPositionIndex = transform.position.x + 5;
+            targetPositionIndex = transform.position.x + offset;
         }
         else
         {
-            targetPositionIndex = transform.position.x - 5;
+            targetPositionIndex = transform.position.x - offset;
         }
 
-        if (targetPositionIndex > 5)
+        if (targetPositionIndex > offset)
         {
-            targetPositionIndex = -5;
+            targetPositionIndex = -offset;
         }
-        else if(targetPositionIndex < -5)
+        else if(targetPositionIndex < -offset)
         {
-            targetPositionIndex = 5;
+            targetPositionIndex = offset;
         }
 
         float startpositionfloat = transform.position.y;

@@ -7,9 +7,9 @@ public class SpawnableBehaviour : MonoBehaviour
 {
     private Vector3[] spawnPositions = new Vector3[]
     {
-        new Vector3(-5f, 5.5f, -1f),
-        new Vector3( 0f, 5.5f, -1f),
-        new Vector3( 5f, 5.5f, -1f)
+        new Vector3(-14.8f, 18.27f, 0f),
+        new Vector3( 0f, 18.27f, 0f),
+        new Vector3( 14.8f, 18.27f, 0f)
      };
 
     [SerializeField] private GameObject[] passTiles;
