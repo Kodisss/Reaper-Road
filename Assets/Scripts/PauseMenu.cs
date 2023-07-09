@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("PrototypeMainLevel");
+        SceneManager.LoadScene("Game");
     }
 
     private void OnPause(InputValue value)

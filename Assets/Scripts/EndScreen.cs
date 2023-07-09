@@ -25,6 +25,6 @@ public class EndScreen : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("Tron");
+        SceneManager.LoadScene("Game");
     }
 }
