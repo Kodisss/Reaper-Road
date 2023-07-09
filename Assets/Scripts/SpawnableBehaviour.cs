@@ -29,6 +29,8 @@ public class SpawnableBehaviour : MonoBehaviour
         numberOfObstacles = obstacleTiles.Length;
         numberOfRoads = spawnPositions.Length;
         SpawnObjects();
+
+        InvokeRepeating("UpdateScore", 0f, 1/GetAcceleration());
     }
 
     private void Update()
@@ -59,6 +61,11 @@ public class SpawnableBehaviour : MonoBehaviour
                 if (i != positionOfPass) SpawnRandomTile(i, emptyTiles);
             }
         }
+    }
+
+    private void UpdateScore()
+    {
+        GameManager.instance.score += 1;
     }
 
     private void WhichPassTiles(int position)

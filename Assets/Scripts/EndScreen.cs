@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +17,7 @@ public class EndScreen : MonoBehaviour
 
     public void RestartGame()
     {
+        GameManager.instance.score = 0;
         SceneManager.LoadScene("Game");
     }
 }
