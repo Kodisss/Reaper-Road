@@ -795,9 +795,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passTiles:
-  - {fileID: 508454973244528755, guid: 53b1e51022d7fac47a3b0232f7fa185c, type: 3}
   - {fileID: 508454973244528755, guid: d2fc99ee0e805504b883592f36cb2911, type: 3}
   - {fileID: 508454973244528755, guid: 07316e247a3361b40aa01064d341db7c, type: 3}
+  emptyTiles:
+  - {fileID: 508454973244528755, guid: 53b1e51022d7fac47a3b0232f7fa185c, type: 3}
+  - {fileID: 508454973244528755, guid: 70afd2f4926633d43a2adf7e1813244c, type: 3}
+  - {fileID: 508454973244528755, guid: 4c590dcf983a5e64e94c55285bc5b7c1, type: 3}
+  - {fileID: 508454973244528755, guid: cf8080636dd6a6c4492c506b5ac42269, type: 3}
+  - {fileID: 508454973244528755, guid: 8facc391854bb534eb47ca32840a655b, type: 3}
+  - {fileID: 508454973244528755, guid: 045a76913b0e0c44eac905a4493f6c13, type: 3}
+  - {fileID: 508454973244528755, guid: ab174d439f5dce14992d9313a6c5bdea, type: 3}
+  - {fileID: 508454973244528755, guid: a79d3e5a4e451b74bb91575eb327d9ec, type: 3}
+  - {fileID: 508454973244528755, guid: d6132dab166dcf942ba14ea6e57e0456, type: 3}
+  - {fileID: 508454973244528755, guid: 6241fecf61fb3b74cb69efc24c9a63f5, type: 3}
   obstacleTiles:
   - {fileID: 508454973244528755, guid: 42fb66235bed9454ebd3724dee9716eb, type: 3}
   - {fileID: 508454973244528755, guid: 94c74a6c4ce15a24884737732973a899, type: 3}
@@ -965,8 +975,8 @@ GameObject:
   - component: {fileID: 487478633}
   - component: {fileID: 487478632}
   m_Layer: 0
-  m_Name: Middle Line
-  m_TagString: MiddleLine
+  m_Name: SpawnLine
+  m_TagString: SpawnLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,7 +990,7 @@ Transform:
   m_GameObject: {fileID: 487478630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 7.1, z: 0}
-  m_LocalScale: {x: 50, y: 10.85, z: 1}
+  m_LocalScale: {x: 6.69, y: 10.85, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

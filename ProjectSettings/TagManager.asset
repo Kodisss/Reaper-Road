@@ -4,10 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MiddleLine
   - Pass
   - Obstacle
   - PauseMenu
+  - Human
+  - Boost
+  - SpawnLine
+  - SpawnDetector
   layers:
   - Default
   - TransparentFX

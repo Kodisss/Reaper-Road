@@ -13,10 +13,11 @@ public class SpawnableBehaviour : MonoBehaviour
      };
 
     [SerializeField] private GameObject[] passTiles;
+    [SerializeField] private GameObject[] emptyTiles;
     [SerializeField] private GameObject[] obstacleTiles;
     [SerializeField] private float acceleration = 1f;
 
-    private enum PassTilesNames {Empty, Soul, Boost};
+    private enum PassTilesNames {Soul, Boost};
 
     private int numberOfObstacles;
 
@@ -51,38 +52,36 @@ public class SpawnableBehaviour : MonoBehaviour
         if (GameManager.instance.isPlaying)
         {
             int positionOfPass = Random.Range(0, numberOfRoads);
-            PassTilesNames typeOfPassTiles = WhichPassTiles();
-
-            Instantiate(passTiles[(int)typeOfPassTiles], spawnPositions[positionOfPass], Quaternion.identity, transform);
+            WhichPassTiles(positionOfPass);
 
             for (int i = 0; i < spawnPositions.Length; ++i)
             {
-                if (i != positionOfPass) SpawnRandomTile(i);
+                if (i != positionOfPass) SpawnRandomTile(i, emptyTiles);
             }
         }
     }
 
-    private PassTilesNames WhichPassTiles()
+    private void WhichPassTiles(int position)
     {
         float value = Random.value;
-        if (value < 0.6f)
+        if (value < 0.8f)
         {
-            return PassTilesNames.Empty;
+            SpawnRandomTile(position, obstacleTiles);
         }
-        else if (value > 0.6f && value < 0.8f)
+        else if (value > 0.8f && value < 0.95f)
         {
-            return PassTilesNames.Soul;
+            Instantiate(passTiles[(int)PassTilesNames.Soul], spawnPositions[position], Quaternion.identity, transform);
         }
         else
         {
-            return PassTilesNames.Boost;
+            Instantiate(passTiles[(int)PassTilesNames.Boost], spawnPositions[position], Quaternion.identity, transform);
         }
     }
 
-    private void SpawnRandomTile(int position)
+    private void SpawnRandomTile(int position, GameObject[] tab)
     {
-        int typeOfObstacle = Random.Range(0, numberOfObstacles);
-        Instantiate(obstacleTiles[typeOfObstacle], spawnPositions[position], Quaternion.identity, transform);
+        int typeOfTile = Random.Range(0, tab.Length);
+        Instantiate(tab[typeOfTile], spawnPositions[position], Quaternion.identity, transform);
     }
 
     public float GetAcceleration()
