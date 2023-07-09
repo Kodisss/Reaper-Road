@@ -11,7 +11,7 @@ public class SpawnablesMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpawnableBehaviour spawnableBehaviour;
 
-    private float verticalSpeed = 2.0f;
+    private float verticalSpeed = 3.0f;
     private float horizontalSpeed = 3.0f;
 
     private float offset = 14.8f;
