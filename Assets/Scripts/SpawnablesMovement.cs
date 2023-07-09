@@ -50,7 +50,7 @@ public class SpawnablesMovement : MonoBehaviour
 
     private bool AmIInTheMiddle()
     {
-        if(transform.position.y < 4 && transform.position.y > -4) return true;
+        if(transform.position.y < 6 && transform.position.y > -2) return true;
         else return false;
     }
 
@@ -58,7 +58,6 @@ public class SpawnablesMovement : MonoBehaviour
     {
         GameManager.instance.isPlaying = false;
         SceneManager.LoadScene("EndScreen");
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,7 +67,6 @@ public class SpawnablesMovement : MonoBehaviour
         {
             spawnableBehaviour.SpawnObjects();
         }
-
         if (gameObject.CompareTag("Obstacle") && collision.CompareTag("Player"))
         {
             EndSpawn();
