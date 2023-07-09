@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a0e3dcf2299498e489fbcf582349f35f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Newspaper Cutout White On Black
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9c2528606b92e79489392636a8b6fabc, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
