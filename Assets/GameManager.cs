@@ -11,15 +11,26 @@ public class GameManager : MonoBehaviour
 
     public bool isPlaying = false;
 
+    public int score = 0;
+
     private void Awake()
     {
-        Debug.Log("ok");
-        instance = this;
-        if (!isPlaying)
+        if (instance == null)
         {
-            isPlaying = true;
-            StartGame();
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            if (!isPlaying)
+            {
+                isPlaying = true;
+            }
         }
+        else
+            Destroy(gameObject);
+    }
+
+    public void BoostPhantom()
+    {
+        boostActivated?.Invoke();
     }
 
     public void StartGame()
@@ -30,10 +41,5 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         endGame?.Invoke();
-    }
-
-    public void BoostPhantom()
-    {
-        boostActivated?.Invoke();
     }
 }

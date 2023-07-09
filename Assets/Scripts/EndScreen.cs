@@ -1,18 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
-    [SerializeField] TMP_Text winnerName;
-
-    private void Start()
-    {
-        winnerName.text = PlayerPrefs.GetString("Winner") + " wins!";
-    }
-
     public void QuitGame()
     {
         Application.Quit();
@@ -25,6 +17,7 @@ public class EndScreen : MonoBehaviour
 
     public void RestartGame()
     {
+        GameManager.instance.score = 0;
         SceneManager.LoadScene("Game");
     }
 }
